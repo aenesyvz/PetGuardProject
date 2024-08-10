@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8535CC3-3EBF-4B81-AD07-1D0153903D1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackages", "{4C0E76AE-2642-4778-81F0-D0F120DDA758}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "petGuardProject", "petGuardProject", "{8D8348AC-08FD-4D69-9E22-AE19D72F805B}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C0E76AE-2642-4778-81F0-D0F120DDA758} = {E8535CC3-3EBF-4B81-AD07-1D0153903D1C}
+		{8D8348AC-08FD-4D69-9E22-AE19D72F805B} = {E8535CC3-3EBF-4B81-AD07-1D0153903D1C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6E4E8FF-E869-4B61-B6CB-645A46BE3DFA}
+	EndGlobalSection
+EndGlobal
