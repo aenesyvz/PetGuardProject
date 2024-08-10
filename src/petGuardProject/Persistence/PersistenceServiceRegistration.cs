@@ -1,0 +1,31 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Persistence.Contexts;
+using Core.Persistence.DependencyInjection;
+using Application.Services.Repositories;
+using Persistence.Repositories;
+
+
+namespace Persistence;
+
+
+public static class PersistenceServiceRegistration
+{
+    public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("PetGuardDb"));
+        services.AddDbMigrationApplier(buildServices => buildServices.GetRequiredService<BaseDbContext>());
+
+        services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
+        services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+        services.AddScoped<IOtpAuthenticatorRepository, OtpAuthenticatorRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+        services.AddScoped<ICityRepository, CityRepository>();
+        services.AddScoped<IDistrictRepository, DistrictRepository>();
+
+        return services;
+    }
+}
