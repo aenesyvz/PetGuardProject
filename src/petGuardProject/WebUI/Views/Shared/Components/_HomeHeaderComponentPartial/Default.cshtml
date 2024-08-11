@@ -1,0 +1,262 @@
+﻿<style>
+    .header{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background-color: transparent;
+    }
+
+    .navbar{
+        height:4rem;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-inline:5rem;
+        padding-block:1rem;
+        padding-inline:1rem;
+        color:white;
+        transition: background-color 0.3s, backdrop-filter 0.3s, border-radius 0.3s;
+    }
+
+    .navbar-l,.navbar-r{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:1rem;
+    }
+    .logo-img {
+        width:6rem;
+        height:6rem;
+    }
+
+    .nav-menu-icon {
+        width:2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; 
+    }
+
+    .progress {
+        height: 0.25rem;
+        background: white;
+        border-radius: 0.25rem; 
+        transition: all 0.3s; 
+    }
+
+    .menu-bar-1,
+    .menu-bar-3 {
+        width: 100%;
+    }
+
+    .menu-bar-2{
+        width:50%;
+    }
+
+    .nav-menu-icon:hover .menu-bar-1{
+        width:50%;
+    }
+
+    .nav-menu-icon:hover .menu-bar-2 {
+        width: 100%;
+    }
+
+    .nav-menu-icon:hover .menu-bar-2{
+       width:50%;
+    }
+
+    .social-media-group ul{
+        display:flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .link-search{
+        width: 20px;
+        height: 20px;
+        display: block;
+        text-indent: -555px;
+        overflow: hidden;
+        padding: 5px;
+        margin-left: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        background-image: url('/assets/icons/search_white.svg');
+    }
+
+    .social-media-group a{
+        width: 20px;
+        height: 20px;
+        display: block;
+        text-indent: -555px;
+        overflow: hidden;
+        padding: 5px;
+        margin-left: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+    .scrolled .social-media-group a {
+        color: #154377;
+    }
+
+
+    .link-facebook{
+        background-image: url('/assets/icons/facebook_white.svg');
+    }
+
+    .link-X{
+        background-image: url('/assets/icons/x_white.svg');
+    }
+
+    .link-instagram{
+        background-image: url('/assets/icons/instagram_white.svg');
+    }
+
+    .link-youtube{
+        background-image: url('/assets/icons/youtube_white.svg');
+    }
+
+    .link-linkedin{
+        background-image: url('/assets/icons/linkedin_white.svg');
+
+    }
+
+    .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px); 
+        color: #6c757d; 
+        border-radius:0 0 10px 10px;
+    }
+
+        .navbar.scrolled .localization{
+            color: #154377;
+        }
+    
+
+        .navbar.scrolled .progress {
+            background: #154377; 
+        }
+
+        .navbar.scrolled .social-media-group ul li {
+            color: #154377; 
+        }
+
+
+    .link-facebook, .link-x, .link-instagram, .link-youtube, .link-linkedin {
+        width: 24px;
+        height: 24px;
+        transition: color 0.3s ease;
+    }
+
+
+    .scrolled .link-facebook,
+    .scrolled .link-x,
+    .scrolled .link-instagram,
+    .scrolled .link-youtube,
+    .scrolled .link-linkedin {
+        color: #154377
+    }
+     
+
+    @@media (max-width: 768px) {
+        .social-icon {
+            display: none; 
+        }
+    }
+
+</style>
+
+
+
+<header class="header" id="header">
+    <div class="navbar" id="nav">
+        <div class="navbar-l">
+            <div class="nav_logo">
+                <img class="logo-img" src="~/assets/icons/home/börü_logo.svg" />
+            </div>
+
+            <div class="nav-menu-icon">
+                <div class="menu-bar-1 progress"></div>
+                <div class="menu-bar-2 progress"></div>
+                <div class="menu-bar-3 progress"></div>
+            </div>
+        </div>
+      
+        <div class="navbar-r">
+            <div class="localization">
+                EN
+            </div>
+
+            <div class="social-media-group">
+                <ul>
+                    <li>
+                        <span class="link-search"></span>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-facebook "></a>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-linkedin"></a>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-X"></a>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-instagram"></a>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-youtube"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+</header>
+
+
+
+<script>
+    window.addEventListener('scroll', function () {
+        const navbar = document.getElementById('nav');
+        const logo = document.querySelector('.nav_logo img');
+        const linkSearchElement = document.querySelector('.link-search');
+        const linkFacebookElement = document.querySelector('.link-facebook');
+        const linkLinkedinElement = document.querySelector('.link-linkedin');
+        const linkXElement = document.querySelector('.link-X');
+        const linkInstagramElement = document.querySelector('.link-instagram');
+        const linkYoutubeElement = document.querySelector('.link-youtube');
+
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+            // document.querySelector('.social-icons').classList.add('scrolled');
+            logo.src = '/assets/icons/home/boru_logo_blue.svg'; 
+
+            linkSearchElement.style.backgroundImage = `url('/assets/icons/search_blue.svg')`;
+            linkFacebookElement.style.backgroundImage = `url('/assets/icons/facebook_blue.svg')`;
+            linkLinkedinElement.style.backgroundImage = `url('/assets/icons/linkedin_blue.svg')`;
+            linkXElement.style.backgroundImage = `url('/assets/icons/x_blue.svg')`;
+            linkInstagramElement.style.backgroundImage = `url('/assets/icons/instagram_blue.svg')`;
+            linkYoutubeElement.style.backgroundImage = `url('/assets/icons/youtube_blue.svg')`;
+        } else {
+            navbar.classList.remove('scrolled');
+            logo.src = '/assets/icons/home/börü_logo.svg';
+            // document.querySelector('.social-icons').classList.remove('scrolled');
+
+            linkSearchElement.style.backgroundImage = `url('/assets/icons/search_white.svg')`;
+            linkFacebookElement.style.backgroundImage = `url('/assets/icons/facebook_white.svg')`;
+            linkLinkedinElement.style.backgroundImage = `url('/assets/icons/linkedin_white.svg')`;
+            linkXElement.style.backgroundImage = `url('/assets/icons/x_white.svg')`;
+            linkInstagramElement.style.backgroundImage = `url('/assets/icons/instagram_white.svg')`;
+            linkYoutubeElement.style.backgroundImage = `url('/assets/icons/youtube_white.svg')`;
+
+
+
+        }
+    });
+</script>

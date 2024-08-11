@@ -27,15 +27,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "src\corePa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security.WebApi.Swagger", "src\corePackages\Core.Security.WebApi.Swagger\Core.Security.WebApi.Swagger.csproj", "{B3441A6F-18D7-4908-8F0B-C54244CE8312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\petGuardProject\WebAPI\WebAPI.csproj", "{DC543109-1F8B-476F-8455-9377877C847A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\petGuardProject\WebAPI\WebAPI.csproj", "{DC543109-1F8B-476F-8455-9377877C847A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\petGuardProject\Infrastructure\Infrastructure.csproj", "{77BD4AE1-8720-4F2E-848E-6E29EF95ED7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\petGuardProject\Infrastructure\Infrastructure.csproj", "{77BD4AE1-8720-4F2E-848E-6E29EF95ED7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "src\petGuardProject\Persistence\Persistence.csproj", "{0957FCF3-E321-48D2-A4EA-407833828082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\petGuardProject\Persistence\Persistence.csproj", "{0957FCF3-E321-48D2-A4EA-407833828082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\petGuardProject\Domain\Domain.csproj", "{8D232D29-DB6E-496F-9C8F-A540D6203A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\petGuardProject\Domain\Domain.csproj", "{8D232D29-DB6E-496F-9C8F-A540D6203A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\petGuardProject\Application\Application.csproj", "{37343E77-C794-4C03-AE7D-8B29263248A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\petGuardProject\Application\Application.csproj", "{37343E77-C794-4C03-AE7D-8B29263248A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "src\petGuardProject\WebUI\WebUI.csproj", "{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{37343E77-C794-4C03-AE7D-8B29263248A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37343E77-C794-4C03-AE7D-8B29263248A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37343E77-C794-4C03-AE7D-8B29263248A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{0957FCF3-E321-48D2-A4EA-407833828082} = {8D8348AC-08FD-4D69-9E22-AE19D72F805B}
 		{8D232D29-DB6E-496F-9C8F-A540D6203A9B} = {8D8348AC-08FD-4D69-9E22-AE19D72F805B}
 		{37343E77-C794-4C03-AE7D-8B29263248A5} = {8D8348AC-08FD-4D69-9E22-AE19D72F805B}
+		{CE1D237A-9ED9-453F-95D2-FF0EE9180ACC} = {8D8348AC-08FD-4D69-9E22-AE19D72F805B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6E4E8FF-E869-4B61-B6CB-645A46BE3DFA}

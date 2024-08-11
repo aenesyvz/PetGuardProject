@@ -1,0 +1,177 @@
+﻿<style>
+    #footer{
+        width: 100%;
+        background: url('/assets/images/header-bg.webp') no-repeat bottom center;
+        background-size: cover;
+    }
+
+    .footer_content{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding-inline:8rem;
+        padding-block:2rem;
+        gap:2rem;
+
+    }
+
+    .footer_content .footer_group{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+     .footer_content .footer_group h3{
+                color: #154377;
+                font-weight:bold;
+     }
+
+            .footer_content .footer_group .footer_group_menu{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                font-size:1rem;
+                font-weight:400;
+                color: #5E6E78;
+            }
+
+
+            .footer_content .footer_group .footer_communication_menu .call_center{
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: var(--fg-blue);
+                padding-left: 45px;
+                margin-bottom: 20px;
+                background-image:url('/assets/icons/call_center.svg');
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
+ 
+            .call_center a{
+                text-decoration:none;
+        color: #154377;
+            }
+
+
+
+    .footer_communication_menu .social-media-group ul {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .footer .link-facebook {
+        background-image: url('/assets/icons/facebook_blue.svg');
+    }
+
+    .footer .link-X {
+        background-image: url('/assets/icons/x_blue.svg');
+    }
+
+    .footer .link-instagram {
+        background-image: url('/assets/icons/instagram_blue.svg');
+    }
+
+    .footer .link-youtube {
+        background-image: url('/assets/icons/youtube_blue.svg');
+    }
+
+    .footer .link-linkedin {
+        background-image: url('/assets/icons/linkedin_blue.svg');
+    }
+
+    .footer_logo img{
+         width:10rem;
+         height:auto;
+    }
+
+    .copyright{
+        padding-inline: 8rem;
+        padding-block: 2rem;
+        color: #5E6E78;
+    }
+
+    @@media (max-width: 768px) {
+        .footer_content{
+            grid-template-columns:repeat(2,1fr);
+            padding-inline:4rem;
+        }
+
+       
+    }
+
+
+    @@media (max-width: 576px) {
+        .footer_content {
+            grid-template-columns: 1fr;
+            padding-inline:2rem;
+        }
+    }
+</style>
+
+<footer class="footer" id="footer">
+    <div class="footer_content">
+        <div class="footer_institutional footer_group">
+           <h3>Kurumsal</h3>
+
+            <div class="footer_institutional_menu footer_group_menu">
+                <a>Politikalar</a>
+                <a>Mevzuat</a>
+                <a>KVKK</a>
+                <a>S.S.S</a>
+            </div>
+        </div>
+
+        <div class="footer_archive footer_group">
+            <h3>Arşiv</h3>
+
+            <div class="footer_archive_menu footer_group_menu">
+                <a>Haber Arşivi</a>
+                <a>Duyuru Arşivi</a>
+                <a>Video Arşivi</a>
+            </div>
+        </div>
+    
+        <div class="footer_communication footer_group">
+            <h3>Çağrı Merkezi</h3>
+
+            <div class="footer_communication_menu footer_group_menu">
+                <div class="call_center">
+                    <a href="444 00 00">444 00 00</a>
+                </div>
+
+                <div class="social-media-group">
+                    <ul>
+                        <li>
+                            <a href="" class="link-facebook "></a>
+                        </li>
+                        <li>
+                            <a href="" class="link-linkedin"></a>
+                        </li>
+                        <li>
+                            <a href="" class="link-X"></a>
+                        </li>
+                        <li>
+                            <a href="" class="link-instagram"></a>
+                        </li>
+                        <li>
+                            <a href="" class="link-youtube"></a>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
+
+
+        <div class="footer_logo footer_group">
+            <img src="~/assets/icons/home/boru_logo_blue.svg"/>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © @DateTime.Now.Year PetGuard LTD ŞTI. Her hakkı saklıdır.
+    </div>
+
+</footer>

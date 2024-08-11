@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+@await Component.InvokeAsync("_DefaultLayoutHeadComponentPartial")
+<body>
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("_HomeFooterComponentPartial")
+
+
+    @await Component.InvokeAsync("_DefaultLayoutScriptComponentPartial")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

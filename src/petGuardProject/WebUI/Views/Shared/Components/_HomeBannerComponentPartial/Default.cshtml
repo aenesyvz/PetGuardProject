@@ -1,0 +1,180 @@
+﻿    <style>
+
+        .banner{
+            position:relative;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+            .swiper-slide::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+                background-repeat: no-repeat;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+        .slide-content {
+            position: absolute;
+            bottom: 40%;
+            left: 10%;
+            color: white;
+            padding: 10px;
+         
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .slide-content h1{
+            font-size: 2rem;
+            color: #FFF;
+            font-weight: 600;
+            max-width: 550px;
+            line-height: 150%;
+        }
+
+        .slide-content p{
+            line-height: 200%;
+            padding-bottom: 50px;
+            color: #FFF;
+            max-width: 550px;
+            font-size:14px;
+        }
+
+        .slide-content a {
+            border-radius: 100px;
+        background-color: whitesmoke;
+        font-size: .9rem;
+        font-weight: 600;
+            color: #154377;
+        padding: 15px 65px 15px 40px;
+        -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        background-image: url('/assets/icons/home/arrow_next_2.svg');
+        background-position: right 10px center;
+        background-repeat:no-repeat;
+        }
+
+        .swiper-controls {
+            position: absolute;
+            bottom: 40px;
+            width:50%;
+            left: 50%; 
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .swiper-pagination {
+            text-align: center;
+        }
+
+        /* Navigation buttons */
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            font-size: 2rem;
+            width: 27px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .swiper-button-next::after, .swiper-button-prev::after {
+                font-size: 2rem;
+                font-weight:bold;
+                color: white;
+            }
+
+        /* Swiper pagination dots */
+        .swiper-pagination-bullet {
+            background-color:#fff; /* Varsayılan beyaz, yarı saydam nokta */
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            opacity: 1; /* Saydamlığı sıfırlar */
+        }
+
+        /* Active pagination dot */
+        .swiper-pagination-bullet-active {
+        background-color: #154377; /* Güzel bir mavi renk */
+            width: 16px;
+            height: 16px;
+            transform: scale(1.2); /* Hafif büyüme efekti */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Geçiş animasyonu */
+        }
+
+    </style>
+
+
+    <section class="banner section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @foreach (var slide in Model)
+                {
+                    <div class="swiper-slide" style="background-image: url('@slide.ImageUrl');">
+                        <div class="slide-content">
+                            <h1>@slide.Title</h1>
+                            <p>@slide.Description</p>
+                            <a class="slide-link">
+                                Devamını Oku
+                           @*  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                                <path d="M0,0h24v24H0V0z" fill="none" />
+                                <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+                            </svg> *@
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="swiper-controls">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+            });
+        });
+    </script>
+
+

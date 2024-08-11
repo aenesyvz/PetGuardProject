@@ -1,0 +1,299 @@
+﻿<style>
+    .news {
+        padding-inline: 8rem;
+        padding-block: 2rem;
+        position: relative;
+        display:grid;
+        gap:2rem;
+    }
+
+    .headera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+
+    }
+
+    .title {
+        color: #154377;
+        font-size: 2rem;
+        font-weight:600;
+    }
+
+    .news-swiper-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .arrow-next,.arrow-prev{
+        font-size:1rem;
+    }
+
+    .circle {
+        width: 12px;
+        height: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border:none;
+        background-color: #E0E0E0;
+        cursor: pointer;
+        transition: all .3s ease-out;
+    }
+
+    .circle.active {
+       background-color: #154377;
+       transform:scale(1.1);
+    }
+
+    .news-content{
+        display:grid;
+        gap:2rem;
+    }
+
+    .news-wrapper{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:3rem;
+    }
+
+    .news-card{
+        display:flex;
+        flex-direction:column;
+        gap:1rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        transition: all .3s ease-in;
+        border-radius:3rem;
+        padding-bottom:2rem;
+    }
+
+
+
+    .news-image{
+        width: 100%;
+        height: 100%; 
+        border-radius: 3rem 3rem 0 0;
+        object-fit: cover; 
+
+    }
+
+    .news-card-info{
+        padding:1rem 1rem;
+        display:grid;
+        gap:15px;
+    }
+
+    .news-date{
+        margin-bottom:10px;
+        color: #AFB7BC;
+        font-size:.75rem;
+    }
+
+    .news-card-title{
+        color: #5E6E78;
+        font-weight:400;
+        font-size:20px;
+    }
+
+    .news-card-description{
+        color: #5E6E78;
+        line-height:170%;
+        font-weight:400;
+    }
+    
+    .news-card-button{
+        padding-top:2rem;
+        color: #154377;
+        outline:none;
+        border:none;
+        border-radius:1rem;
+        position:relative;
+        color:white;
+        display:flex;
+        align-items:center;
+        justify-content:start;
+    }
+
+
+    .all-news-button{
+        border-radius: 100px;
+        background-color: #154377;
+        font-size: .9rem;
+        font-weight: 600;
+        color: #FFF;
+        padding: 15px 65px 15px 40px;
+        -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDcyIDcyIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjMiIGQ9Ik0yNi43MyA1OS43NiA0Ni4yOSA0MC4yYzIuMzEtMi4zMSAyLjMxLTYuMDkgMC04LjRMMjYuNzMgMTIuMjQiIG9wYWNpdHk9Ii41Ii8+PC9zdmc+);
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        place-self:center;
+    }
+
+    @@media (max-width:992px) {
+        .news {
+            padding-inline: 3rem;
+        }
+
+         .news-image {
+            height: 200px;
+        }
+
+        .news-wrapper {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    @@media (max-width:567px){
+        .news{
+            padding-inline: 2rem;
+        }
+
+        .news-image {
+            height: 167px;
+        }
+        .news-wrapper{
+            grid-template-columns:1fr;
+        }
+    }
+
+    
+  
+</style>
+
+
+<section class="news section">
+    <div class="headera">
+        <div class="title">Haberler</div>
+        <div class="news-swiper-controls">
+            <div class="arrow-back">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                    <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
+                    <path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z" />
+                </svg>
+            </div>
+            <div class="circle active">
+               
+            </div>
+            <div class="circle">
+               
+            </div>
+            <div class="circle">
+
+            </div>
+            <div class="arrow-next">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                    <path d="M0,0h24v24H0V0z" fill="none" />
+                    <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="news-content">
+       <div class="news-wrapper">
+            <div class="news-card">
+                <img class="news-image" src="~/assets/images/banner1.png"/>
+
+                 <div class="news-card-info">
+                    <div class="news-date">08 Ağustos 2024</div>
+
+                    <h3 class="news-card-title">10.Çevre Paketi</h3>
+
+                    <p class="news-card-description">dfsdnjfksdmaf edfjıkdfkadm adfakıdfsdkmfsd aodkadmafk addıdjfskdm adnadfksdkfsd fafksmfsdn afıjfıkf</p>
+
+                    <a class="news-card-button">
+                        <p style="color:#154377">Devamını Oku</p>
+                        <svg class="news-card-more" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                            <path d="M0,0h24v24H0V0z" fill="none" />
+                            <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+                        </svg>
+                    </a>
+                 </div>
+            </div>
+
+            <div class="news-card">
+                <img class="news-image" src="~/assets/images/banner2.jpeg" />
+
+                <div class="news-card-info">
+                    <div class="news-date">08 Ağustos 2024</div>
+
+                    <h3 class="news-card-title">10.Çevre Paketi</h3>
+
+                    <p class="news-card-description">dfsdnjfksdmaf edfjıkdfkadm adfakıdfsdkmfsd aodkadmafk addıdjfskdm adnadfksdkfsd fafksmfsdn afıjfıkf</p>
+
+                    <a class="news-card-button">
+                        <p style="color:#154377">Devamını Oku</p>
+                        <svg class="news-card-more" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                            <path d="M0,0h24v24H0V0z" fill="none" />
+                            <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img class="news-image" src="~/assets/images/banner3.jpg" />
+
+                <div class="news-card-info">
+                    <div class="news-date">08 Ağustos 2024</div>
+
+                    <h3 class="news-card-title">10.Çevre Paketi</h3>
+
+                    <p class="news-card-description">dfsdnjfksdmaf edfjıkdfkadm adfakıdfsdkmfsd aodkadmafk addıdjfskdm adnadfksdkfsd fafksmfsdn afıjfıkf</p>
+
+                    <a class="news-card-button">
+                        <p style="color:#154377">Devamını Oku</p>
+                        <svg class="news-card-more" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+                            <path d="M0,0h24v24H0V0z" fill="none" />
+                            <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+           
+            
+       </div>
+    </div>
+
+    <a class="all-news-button">
+        <h3>TÜM DUYURULAR</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#154377">
+            <path d="M0,0h24v24H0V0z" fill="none" />
+            <polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12" />
+        </svg>
+    </a>
+</section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const circles = document.querySelectorAll('.circle');
+        let activeIndex = 0;
+
+        function updateCircles() {
+            circles.forEach((circle, index) => {
+                circle.classList.toggle('active', index === activeIndex);
+            });
+        }
+
+        document.querySelector('.arrow-next').addEventListener('click', function () {
+            activeIndex = (activeIndex + 1) % circles.length;
+            updateCircles();
+        });
+
+        document.querySelector('.arrow-back').addEventListener('click', function () {
+            activeIndex = (activeIndex - 1 + circles.length) % circles.length;
+            updateCircles();
+        });
+
+        updateCircles();
+    });
+</script>
