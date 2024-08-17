@@ -9,27 +9,14 @@ using Application.Services.UsersService;
 using AutoMapper;
 using Core.Security.Hashing;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 
 namespace Application.Features.PetOwners.Commands.Create;
 
 public class CreatePetOwnerCommand : IRequest<CreatedPetOwnerResponse>
 {
-    public string Email { get; set; }
-    public string Password { get; set; }
-    public string ConfirmPassword { get; set; }
-
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string NationalityNumber { get; set; }
-    public DateTime DateOfBirth { get; set; }
-    public Gender Gender { get; set; }
-    public Guid CityId { get; set; }
-    public Guid DistrcitId { get; set; }
-    public string Address { get; set; }
-    public string? ImageUrl { get; set; }
-    public string PhoneNumber { get; set; }
+    public PetOwnerForRegisterDto PetOwnerForRegisterDto { get; set; }
+    public string IpAddress { get; set; }
 
 
     public class CreatePetOwnerCommandHandler : IRequestHandler<CreatePetOwnerCommand, CreatedPetOwnerResponse>
@@ -57,7 +44,7 @@ public class CreatePetOwnerCommand : IRequest<CreatedPetOwnerResponse>
 
         public async Task<CreatedPetOwnerResponse> Handle(CreatePetOwnerCommand request, CancellationToken cancellationToken)
         {
-            await _authBusinessRules.UserEmailShouldBeNotExists(request.Email);
+            await _authBusinessRules.UserEmailShouldBeNotExists(request.PetOwnerForRegisterDto.Email);
 
             User createdUser =  await CreateUser(request);
             PetOwner createdPetOwner = await CreatePetOwner(request, createdUser);
@@ -73,7 +60,7 @@ public class CreatePetOwnerCommand : IRequest<CreatedPetOwnerResponse>
         private async Task<User> CreateUser(CreatePetOwnerCommand request)
         {
             HashingHelper.CreatePasswordHash(
-                request.Password,
+                request.PetOwnerForRegisterDto.Password,
                 passwordHash: out byte[] passwordHash,
                 passwordSalt: out byte[] passwordSalt
             );
@@ -81,7 +68,7 @@ public class CreatePetOwnerCommand : IRequest<CreatedPetOwnerResponse>
             User newUser =
                 new()
                 {
-                    Email = request.Email,
+                    Email = request.PetOwnerForRegisterDto.Email,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
                     LockoutEnabled = true,

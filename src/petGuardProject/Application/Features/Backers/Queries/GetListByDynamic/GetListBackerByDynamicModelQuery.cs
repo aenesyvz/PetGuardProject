@@ -16,12 +16,12 @@ using System.Threading.Tasks;
 namespace Application.Features.Backers.Queries.GetListByDynamic;
 
 
-public class GetListBackerDynamicModelQuery : IRequest<GetListResponse<GetListBackerDynamicModelListItemDto>>
+public class GetListBackerByDynamicModelQuery : IRequest<GetListResponse<GetListBackerByDynamicModelListItemDto>>
 {
     public DynamicQuery DynamicQuery { get; set; }
     public PageRequest PageRequest { get; set; }
 
-    public class GetListBackerDynamicModelQueryHandler : IRequestHandler<GetListBackerDynamicModelQuery, GetListResponse<GetListBackerDynamicModelListItemDto>>
+    public class GetListBackerDynamicModelQueryHandler : IRequestHandler<GetListBackerByDynamicModelQuery, GetListResponse<GetListBackerByDynamicModelListItemDto>>
     {
         private readonly IBackerRepository _backerRepository;
         private readonly IMapper _mapper;
@@ -32,7 +32,7 @@ public class GetListBackerDynamicModelQuery : IRequest<GetListResponse<GetListBa
             _mapper = mapper;
         }
 
-        public async Task<GetListResponse<GetListBackerDynamicModelListItemDto>> Handle(GetListBackerDynamicModelQuery request, CancellationToken cancellationToken)
+        public async Task<GetListResponse<GetListBackerByDynamicModelListItemDto>> Handle(GetListBackerByDynamicModelQuery request, CancellationToken cancellationToken)
         {
             IPaginate<Backer> paginate = await _backerRepository.GetListByDynamicAsync(
                     request.DynamicQuery,
@@ -42,7 +42,7 @@ public class GetListBackerDynamicModelQuery : IRequest<GetListResponse<GetListBa
                     cancellationToken:cancellationToken
                 );
 
-            GetListResponse<GetListBackerDynamicModelListItemDto> response = _mapper.Map<GetListResponse<GetListBackerDynamicModelListItemDto>>( paginate );
+            GetListResponse<GetListBackerByDynamicModelListItemDto> response = _mapper.Map<GetListResponse<GetListBackerByDynamicModelListItemDto>>( paginate );
 
             return response;
         }

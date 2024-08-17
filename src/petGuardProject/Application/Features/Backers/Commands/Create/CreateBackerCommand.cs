@@ -13,30 +13,18 @@ using AutoMapper;
 using Core.Security.Hashing;
 using Core.Security.JWT;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 
 namespace Application.Features.Backers.Commands.Create;
 
-public class CreateBackerCommand : IRequest<CreatedBackerRespone>
+public class CreateBackerCommand : IRequest<CreatedBackerResponse>
 {
-    public string Email { get; set; }
-    //public string Password { get; set; }
-    //public string ConfirmPassword { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string NationalityNumber { get; set; }
-    public DateTime DateOfBirth { get; set; }
-    public Gender Gender { get; set; }
-    public Guid CityId { get; set; }
-    public Guid DistrcitId { get; set; }
-    public string Address { get; set; }
-    public string PhoneNumber { get; set; }
 
+    public BackerForRegisterDto BackerForRegisterDto { get; set; }
     public string IpAddress { get; set; }
 
 
-    public class CreateBackerCommandHandler : IRequestHandler<CreateBackerCommand, CreatedBackerRespone>
+    public class CreateBackerCommandHandler : IRequestHandler<CreateBackerCommand, CreatedBackerResponse>
     {
         private readonly IBackerRepository _backerRepository;
         private readonly IAuthService _authService;
@@ -61,14 +49,14 @@ public class CreateBackerCommand : IRequest<CreatedBackerRespone>
             _backerBusinessRules = backerBusinessRules;
         }
 
-        public async Task<CreatedBackerRespone> Handle(CreateBackerCommand request, CancellationToken cancellationToken)
+        public async Task<CreatedBackerResponse> Handle(CreateBackerCommand request, CancellationToken cancellationToken)
         {
-            await _authBusinessRules.UserEmailShouldBeNotExists(request.Email);
+            await _authBusinessRules.UserEmailShouldBeNotExists(request.BackerForRegisterDto.Email);
 
-            await _mernisServiceBase.CheckIfRealPerson(nationalityNumber: Convert.ToInt64(request.NationalityNumber), 
-                                                       firstName: request.FirstName, 
-                                                       lastName: request.LastName, 
-                                                       yearOfBirth: request.DateOfBirth.Year);
+            await _mernisServiceBase.CheckIfRealPerson(nationalityNumber: Convert.ToInt64(request.BackerForRegisterDto.NationalityNumber), 
+                                                       firstName: request.BackerForRegisterDto.FirstName, 
+                                                       lastName: request.BackerForRegisterDto.LastName, 
+                                                       yearOfBirth: request.BackerForRegisterDto.DateOfBirth.Year);
 
             string password = UtilityManager.GeneratePassword(length: 6, 
                                                               includeLowercase: true, 
@@ -82,7 +70,7 @@ public class CreateBackerCommand : IRequest<CreatedBackerRespone>
 
             await AddBackerOperationClaims(createdUser);
 
-            CreatedBackerRespone respone = _mapper.Map<CreatedBackerRespone>(createdBacker);
+            CreatedBackerResponse respone = _mapper.Map<CreatedBackerResponse>(createdBacker);
             return respone;
             
         }
@@ -98,7 +86,7 @@ public class CreateBackerCommand : IRequest<CreatedBackerRespone>
             User newUser =
                 new()
                 {
-                    Email = request.Email,
+                    Email = request.BackerForRegisterDto.Email,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
                     LockoutEnabled=true,

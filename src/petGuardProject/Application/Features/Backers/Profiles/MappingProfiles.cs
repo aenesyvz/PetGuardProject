@@ -22,7 +22,7 @@ public class MappingProfiles : Profile
     public MappingProfiles()
     {
         CreateMap<Backer, CreateBackerCommand>().ReverseMap();
-        CreateMap<Backer, CreatedBackerRespone>().ReverseMap();
+        CreateMap<Backer, CreatedBackerResponse>().ReverseMap();
 
         CreateMap<Backer, UpdateBackerCommand>().ReverseMap();
         CreateMap<Backer, UpdatedBackerResponse>().ReverseMap();
@@ -33,9 +33,9 @@ public class MappingProfiles : Profile
         CreateMap<Backer, GetByIdBackerResponse>()
             .ForMember(destinationMember: c => c.CityName, memberOptions: opt => opt.MapFrom(c => c.City.Name));
 
-        CreateMap<Backer, GetListBackerDynamicModelListItemDto>()
+        CreateMap<Backer, GetListBackerByDynamicModelListItemDto>()
           .ForMember(destinationMember: c => c.CityName, memberOptions: opt => opt.MapFrom(c => c.City.Name));
-        CreateMap<IPaginate<Backer>, GetListResponse<GetListBackerDynamicModelListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<Backer>, GetListResponse<GetListBackerByDynamicModelListItemDto>>().ReverseMap();
 
     }
 }

@@ -12,17 +12,15 @@ public class CreateBackerCommandValidator:AbstractValidator<CreateBackerCommand>
 {
     public CreateBackerCommandValidator()
     {
-        RuleFor(c => c.Email).NotEmpty().EmailAddress();
-        //RuleFor(c => c.Password).NotEmpty().MinimumLength(6);
-        //RuleFor(c => c.ConfirmPassword).NotEmpty().MinimumLength(6).Equal(c => c.Password);
-        RuleFor(c => c.FirstName).NotEmpty().MinimumLength(3);
-        RuleFor(c => c.LastName).NotEmpty().MinimumLength(3);
-        RuleFor(c => c.Gender).NotEmpty();
-        RuleFor(c => c.PhoneNumber).NotEmpty();
-        RuleFor(c => c.CityId).NotEmpty();
-        RuleFor(c => c.DistrcitId).NotEmpty();
-        RuleFor(c => c.DateOfBirth).NotEmpty();
-        RuleFor(c => c.Address).NotEmpty();
-        RuleFor(c => c.NationalityNumber).NotEmpty().MinimumLength(11);
+        RuleFor(c => c.BackerForRegisterDto.Email).NotEmpty().EmailAddress();
+        RuleFor(c => c.BackerForRegisterDto.FirstName).NotEmpty().MinimumLength(3);
+        RuleFor(c => c.BackerForRegisterDto.LastName).NotEmpty().MinimumLength(3);
+        RuleFor(c => c.BackerForRegisterDto.Gender).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.PhoneNumber).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.CityId).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.DistrcitId).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.DateOfBirth).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.Address).NotEmpty();
+        RuleFor(c => c.BackerForRegisterDto.NationalityNumber).NotEmpty().MinimumLength(11);
     }
 }
