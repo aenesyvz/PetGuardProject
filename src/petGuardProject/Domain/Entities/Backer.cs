@@ -18,6 +18,8 @@ public class Backer : Entity<Guid>
     public string PhoneNumber { get; set; }
 
     public virtual User User { get; set; }
+    public virtual City City { get; set; }
+    public virtual District District { get; set; }
 
     public Backer()
     {
