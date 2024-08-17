@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.OperationClaims.Queries.GetById;
 
-public class GetByIdOperationClaimQuery : IRequest<GetByIdOperationClaimResponse>, ISecuredRequest
+public class GetByIdOperationClaimQuery : IRequest<GetByIdOperationClaimResponse> /*, ISecuredRequest*/
 {
     public int Id { get; set; }
 

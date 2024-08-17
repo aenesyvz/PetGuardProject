@@ -3,8 +3,10 @@ using Application.Services.AuthService;
 using Application.Services.BackerService;
 using Application.Services.CityService;
 using Application.Services.DistrictService;
+using Application.Services.OperationClaimsService;
 using Application.Services.PetOwnersService;
 using Application.Services.PetService;
+using Application.Services.UserOperationClaimsService;
 using Application.Services.UsersService;
 using Application.Services.UtilitiesService;
 using Core.Application.Dtos;
@@ -29,7 +31,7 @@ using System.Reflection;
 
 namespace Application;
 
-public static class ApplicationServiceRegisteration
+public static class ApplicationServiceRegistration
 {
     public static IServiceCollection AddApplicationServices(
          this IServiceCollection services,
@@ -62,6 +64,8 @@ public static class ApplicationServiceRegisteration
 
         services.AddScoped<IAuthService, AuthManager>();
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
+        services.AddScoped<IOperationClaimService, OperationClaimManager>();
+        services.AddScoped<IUserOperationClaimService, UserOperationClaimManager>();
         services.AddScoped<IUserService, UserManager>();
         services.AddScoped<ICityService, CityManager>();
         services.AddScoped<IDistrictService, DistrictManager>();

@@ -14,12 +14,12 @@ namespace Application.Services.UserOperationClaimsService;
 
 
 
-public class UserUserOperationClaimManager : IUserOperationClaimService
+public class UserOperationClaimManager : IUserOperationClaimService
 {
     private readonly IUserOperationClaimRepository _userUserOperationClaimRepository;
     private readonly UserOperationClaimBusinessRules _userUserOperationClaimBusinessRules;
 
-    public UserUserOperationClaimManager(
+    public UserOperationClaimManager(
         IUserOperationClaimRepository userUserOperationClaimRepository,
         UserOperationClaimBusinessRules userUserOperationClaimBusinessRules
     )

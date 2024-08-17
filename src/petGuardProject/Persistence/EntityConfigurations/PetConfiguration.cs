@@ -22,7 +22,7 @@ public class PetConfiguration : IEntityTypeConfiguration<Pet>
         builder.Property(c => c.Weight).HasColumnName("Weight");
         builder.Property(c => c.Height).HasColumnName("Height");
 
-        builder.Property(c => c.PetOwner);
+        builder.HasOne(c => c.PetOwner);
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
     }
