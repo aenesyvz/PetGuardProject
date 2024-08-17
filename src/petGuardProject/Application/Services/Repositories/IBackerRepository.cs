@@ -3,4 +3,4 @@ using Domain.Entities;
 
 namespace Application.Services.Repositories;
 
-public interface IDistrictRepository : IAsyncRepository<District,Guid>,IRepository<District,Guid> { }
+public interface IBackerRepository : IAsyncRepository<Backer,Guid>, IRepository<Backer,Guid> { }

@@ -8,7 +8,7 @@ namespace Application.Features.Cities.Contants;
 
 public class CitiesMessages
 {
-    public const string SectionName = "Users";
+    public const string SectionName = "Cities";
 
     public const string CityDontExists = "CityDontExists";
     public const string CityNameAlreadyExists = "CityNameAlreadyExists";

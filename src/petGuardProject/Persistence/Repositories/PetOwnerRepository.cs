@@ -5,9 +5,9 @@ using Application.Services.Repositories;
 
 namespace Persistence.Repositories;
 
-public class CityRepository : EfRepositoryBase<City, Guid, BaseDbContext>, ICityRepository
+public class PetOwnerRepository : EfRepositoryBase<PetOwner, Guid, BaseDbContext>, IPetOwnerRepository
 {
-    public CityRepository(BaseDbContext context) : base(context)
+    public PetOwnerRepository(BaseDbContext context) : base(context)
     {
     }
 }

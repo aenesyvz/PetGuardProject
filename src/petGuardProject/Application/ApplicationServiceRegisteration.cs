@@ -1,8 +1,12 @@
 ﻿using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
+using Application.Services.BackerService;
 using Application.Services.CityService;
 using Application.Services.DistrictService;
+using Application.Services.PetOwnersService;
+using Application.Services.PetService;
 using Application.Services.UsersService;
+using Application.Services.UtilitiesService;
 using Core.Application.Dtos;
 using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Caching;
@@ -61,6 +65,9 @@ public static class ApplicationServiceRegisteration
         services.AddScoped<IUserService, UserManager>();
         services.AddScoped<ICityService, CityManager>();
         services.AddScoped<IDistrictService, DistrictManager>();
+        services.AddScoped<IBackerService, BackerManager>();
+        services.AddScoped<IPetService, PetManager>();
+        services.AddScoped<IPetOwnerService,PetOwnerManager>();
 
 
         services.AddYamlResourceLocalization();

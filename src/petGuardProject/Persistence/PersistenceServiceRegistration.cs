@@ -25,6 +25,9 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
         services.AddScoped<ICityRepository, CityRepository>();
         services.AddScoped<IDistrictRepository, DistrictRepository>();
+        services.AddScoped<IPetRepository, PetRepository>();
+        services.AddScoped<IPetOwnerRepository, PetOwnerRepository>();
+        services.AddScoped<IBackerRepository, BackerRepository>();
 
         return services;
     }
