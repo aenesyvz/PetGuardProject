@@ -17,6 +17,5 @@ public class PetOwnerForRegisterDto : IDto
     public Guid CityId { get; set; }
     public Guid DistrcitId { get; set; }
     public string Address { get; set; }
-    public string? ImageUrl { get; set; }
     public string PhoneNumber { get; set; }
 }

@@ -1,6 +1,7 @@
 ﻿using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.BackerService;
+using Application.Services.BackgroundServices;
 using Application.Services.CityService;
 using Application.Services.DistrictService;
 using Application.Services.OperationClaimsService;
@@ -72,6 +73,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IBackerService, BackerManager>();
         services.AddScoped<IPetService, PetManager>();
         services.AddScoped<IPetOwnerService,PetOwnerManager>();
+
+        services.AddHostedService<EmailSenderBackgroundService>();
 
 
         services.AddYamlResourceLocalization();

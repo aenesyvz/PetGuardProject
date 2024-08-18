@@ -21,6 +21,7 @@ public class MappingProfiles : Profile
     {
         CreateMap<PetOwner, CreatePetOwnerCommand>().ReverseMap();
         CreateMap<PetOwner, CreatedPetOwnerResponse>().ReverseMap();
+        CreateMap<PetOwner, PetOwnerForRegisterDto>().ReverseMap();
 
         CreateMap<PetOwner, UpdatePetOwnerCommand>().ReverseMap();
         CreateMap<PetOwner, UpdatedPetOwnerResponse>().ReverseMap();

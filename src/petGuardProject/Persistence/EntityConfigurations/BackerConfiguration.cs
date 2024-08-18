@@ -22,6 +22,9 @@ public class BackerConfiguration : IEntityTypeConfiguration<Backer>
         builder.Property(c => c.Address).HasColumnName("Address");
         builder.Property(c => c.ImageUrl).HasColumnName("ImageUrl");
         builder.Property(c => c.PhoneNumber).HasColumnName("PhoneNumber");
+        builder.Property(c => c.CreatedDate).HasColumnName("CreatedDate").IsRequired();
+        builder.Property(c => c.UpdatedDate).HasColumnName("UpdatedDate");
+        builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasOne(c => c.User);
 

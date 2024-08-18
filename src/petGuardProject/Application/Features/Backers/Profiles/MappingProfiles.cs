@@ -23,6 +23,7 @@ public class MappingProfiles : Profile
     {
         CreateMap<Backer, CreateBackerCommand>().ReverseMap();
         CreateMap<Backer, CreatedBackerResponse>().ReverseMap();
+        CreateMap<Backer, BackerForRegisterDto>().ReverseMap();
 
         CreateMap<Backer, UpdateBackerCommand>().ReverseMap();
         CreateMap<Backer, UpdatedBackerResponse>().ReverseMap();
