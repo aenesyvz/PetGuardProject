@@ -23,6 +23,8 @@ public class BaseDbContext : DbContext
     public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     public DbSet<Backer> Backers { get; set; }
     public DbSet<Pet> Pets { get; set; }
+    public DbSet<PetOwner> PetOwners { get; set; }
+    public DbSet<PetAd> PetAds { get; set; }
 
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)

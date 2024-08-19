@@ -71,10 +71,10 @@ public class CreateBackerCommand : IRequest<CreatedBackerResponse>
         {
             await _authBusinessRules.UserEmailShouldBeNotExists(request.BackerForRegisterDto.Email);
 
-            //await _mernisServiceBase.CheckIfRealPerson(nationalityNumber: Convert.ToInt64(request.BackerForRegisterDto.NationalityNumber),
-            //                                           firstName: request.BackerForRegisterDto.FirstName,
-            //                                           lastName: request.BackerForRegisterDto.LastName,
-            //                                           yearOfBirth: request.BackerForRegisterDto.DateOfBirth.Year);
+            await _mernisServiceBase.CheckIfRealPerson(nationalityNumber: Convert.ToInt64(request.BackerForRegisterDto.NationalityNumber),
+                                                       firstName: request.BackerForRegisterDto.FirstName,
+                                                       lastName: request.BackerForRegisterDto.LastName,
+                                                       yearOfBirth: request.BackerForRegisterDto.DateOfBirth.Year);
 
             string password = UtilityManager.GeneratePassword(length: 6,
                                                               includeLowercase: true,

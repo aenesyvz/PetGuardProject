@@ -1,0 +1,6 @@
+﻿PetAdsDontExists: "The pet advertisement does not exist."
+PetAdsAlreadyExists: "The pet advertisement already exists."
+PetAdsNotActive: "The pet advertisement is not active."
+PetAdsDeleted: "The pet advertisement has been deleted."
+PetAdsCompleted: "The pet advertisement has been completed."
+StartDateMustBeBeforeEndDate: "Start date must be before end date."

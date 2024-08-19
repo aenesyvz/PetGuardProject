@@ -1,0 +1,6 @@
+﻿PetAdsDontExists: "Evcil hayvan ilanı mevcut değil."
+PetAdsAlreadyExists: "Evcil hayvan ilanı zaten mevcut."
+PetAdsNotActive: "Evcil hayvan ilanı aktif değil."
+PetAdsDeleted: "Evcil hayvan ilanı silinmiş."
+PetAdsCompleted: "Evcil hayvan ilanı tamamlanmış."
+StartDateMustBeBeforeEndDate: "Başlangıç tarihi bitiş tarihinden önce olmalıdır."

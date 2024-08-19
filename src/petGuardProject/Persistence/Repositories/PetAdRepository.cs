@@ -5,9 +5,9 @@ using Application.Services.Repositories;
 
 namespace Persistence.Repositories;
 
-public class BackerRepository : EfRepositoryBase<Backer, Guid, BaseDbContext>, IBackerRepository
+public class PetAdRepository : EfRepositoryBase<PetAd, Guid, BaseDbContext>, IPetAdRepository
 {
-    public BackerRepository(BaseDbContext context) : base(context)
+    public PetAdRepository(BaseDbContext context) : base(context)
     {
     }
 }
