@@ -4,13 +4,13 @@ using Application.Services.BackerService;
 using Application.Services.BackgroundServices;
 using Application.Services.CityService;
 using Application.Services.DistrictService;
+using Application.Services.JobApplicationService;
 using Application.Services.OperationClaimsService;
+using Application.Services.PetAdsService;
 using Application.Services.PetOwnersService;
 using Application.Services.PetService;
 using Application.Services.UserOperationClaimsService;
 using Application.Services.UsersService;
-using Application.Services.UtilitiesService;
-using Core.Application.Dtos;
 using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Caching;
 using Core.Application.Pipelines.Logging;
@@ -73,6 +73,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IBackerService, BackerManager>();
         services.AddScoped<IPetService, PetManager>();
         services.AddScoped<IPetOwnerService,PetOwnerManager>();
+        services.AddScoped<IPetAdService, PetAdManager>();
+        services.AddScoped<IJobApplicationService, JobApplicationManager>();
 
         services.AddHostedService<EmailSenderBackgroundService>();
 

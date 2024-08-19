@@ -25,7 +25,7 @@ public class BaseDbContext : DbContext
     public DbSet<Pet> Pets { get; set; }
     public DbSet<PetOwner> PetOwners { get; set; }
     public DbSet<PetAd> PetAds { get; set; }
-
+    public DbSet<JobApplication> jobApplications { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

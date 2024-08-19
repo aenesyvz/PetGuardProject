@@ -29,6 +29,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IPetOwnerRepository, PetOwnerRepository>();
         services.AddScoped<IBackerRepository, BackerRepository>();
         services.AddScoped<IPetAdRepository, PetAdRepository>();
+        services.AddScoped<IJobApplicationRepository, JobApplicationRepository>();
 
 
         return services;
