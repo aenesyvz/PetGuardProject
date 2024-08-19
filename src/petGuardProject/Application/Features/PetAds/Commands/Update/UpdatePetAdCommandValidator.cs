@@ -9,6 +9,8 @@ public class UpdatePetAdCommandValidator : AbstractValidator<UpdatePetAdCommand>
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.PetOwnerId).NotEmpty();
         RuleFor(c => c.PetId).NotEmpty();
+        RuleFor(c => c.Title).NotEmpty().MinimumLength(3);
+        RuleFor(c => c.Description).NotEmpty().MinimumLength(3);
         RuleFor(c => c.CityId).NotEmpty();
         RuleFor(c => c.DistrictId).NotEmpty();
         RuleFor(c => c.StartDate).NotEmpty();

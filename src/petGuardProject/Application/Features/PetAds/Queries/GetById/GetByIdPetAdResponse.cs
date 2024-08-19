@@ -12,6 +12,7 @@ public class GetByIdPetAdResponse: IResponse
     public Guid PetId { get; set; }
     public string PetName { get; set; }
     public string PetImage { get; set; }
+    public string Title { get; set; }
     public string Description { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
